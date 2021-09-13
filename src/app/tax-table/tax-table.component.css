@@ -1,0 +1,50 @@
+.full-width-table {
+  width: 100%;
+}
+.totalCost{
+  height:60px;
+  background:white;
+  color:rgb(90, 13, 190);
+  font-weight: 900;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.full-width {
+  width: 100%;
+}
+ul{
+  list-style-type: none;
+  padding:0;
+}
+.bracket li{
+  height:4em;
+  background:white;
+  color:black;
+  margin-bottom: 10px;
+  border-radius: 5px;
+ 
+}
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+.bracket li .item-left{
+ margin-left:15px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: start;
+}
+.bracket li .item-right{
+  margin-right:15px;
+  color:rgb(90, 13, 190);
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

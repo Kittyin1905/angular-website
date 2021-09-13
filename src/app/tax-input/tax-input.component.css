@@ -1,0 +1,66 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.style1-card{
+  background:linear-gradient(0deg, rgba(136,100,196,0.9845619522222951) 0%, rgba(54,22,110,1) 79%);
+  display:block;
+}
+.style1-content{
+  color:white;
+  padding-top:30%;
+}
+.style2-content{
+  color:white;
+}
+.moonborder{
+  position:absolute;
+  margin-left:15px;
+  margin-top:-23px;
+  width:450px;
+  height:250px;
+ border-left: 16px solid white;
+ border-bottom:16px solid white;
+}
+.moon{
+  background: linear-gradient(90deg, rgba(214,210,240,1) 0%, rgba(136,100,196,0.9845619522222951) 86%);
+  position:relative;
+ /* margin-left: -8%;
+  margin-top:-20%; 
+ */
+ margin-left: -8%;
+ margin-top:39%;
+  width:400px;
+  height:400px;
+  border-radius:50%;
+}
+.white-button{
+  background-color: white;
+  margin-left: 50%;
+  margin-top: 30%;
+  z-index: 1;
+}
+.full-width {
+  width: 100%;
+}
+.backgroundSky{
+  background-image:url(../../assets/img/sky.PNG);
+}

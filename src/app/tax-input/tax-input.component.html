@@ -1,0 +1,74 @@
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.cols"
+    [rowspan]="( cardLayout | async )?.rows">
+      <mat-card id="index" class="dashboard-card style1-card backgroundSky">
+        <mat-card-content class="dashboard-card-content style1-content" layout="row" >       
+          <h1>Tax-o-tron</h1>
+          <h3>The free and single online tax calculator.</h3>
+        </mat-card-content>
+        <button mat-fab class="white-button" aria-label="Example icon button with a bookmark icon">
+        </button>    
+        <div>
+          <div></div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.cols"
+    [rowspan]="( cardLayout | async )?.rows">
+      <app-tax-form (taxCalculated)="showTaxInput($event)"></app-tax-form>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.cols"
+    [rowspan]="( cardLayout | async )?.rows">  
+   <mat-card class="shipping-card">
+        <mat-card-content>
+          <h1>Your tax result</h1>
+          <div class="row">
+            <div class="col">
+              <mat-hint>Select your country of residence *</mat-hint>
+              <mat-form-field class="full-width">
+                <mat-select  [disabled]=true name="country" [(ngModel)]="model.country">
+                  <mat-option *ngFor="let country of countries" [value]="country">
+                    {{country}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-hint>Select an income year *</mat-hint>
+              <mat-form-field class="full-width">
+                <mat-select  [disabled]=true name="year"  [(ngModel)]="model.year">
+                  <mat-option *ngFor="let year of years" [value]="year">
+                    {{ year}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-hint>Enter your taxable income for the income year *</mat-hint>
+              <mat-form-field class="full-width">
+                <mat-label>Amount</mat-label>
+                <input matInput  [disabled]=true type="text" [(ngModel)]="model.income" class="example-right-align">
+                <span matPrefix>$&nbsp;</span>
+                <span matSuffix>.00</span>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-flat-button href="#index">Go back to previous screen</a>
+        </mat-card-actions>
+      </mat-card> 
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.cols"
+    [rowspan]="( cardLayout | async )?.rows">
+      <mat-card class="dashboard-card backgroundSky">
+        <mat-card-content class="dashboard-card-content style2-content" layout="row" >    
+          <p>Your estimated taxable income is:</p>   
+          <app-tax-table  [taxInfo]="model" class="full-width"></app-tax-table>
+        </mat-card-content>     
+      </mat-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>  
+</div>

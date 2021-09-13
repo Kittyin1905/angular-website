@@ -1,0 +1,13 @@
+<div class="mat-elevation-z8">
+  <div class="totalCost">${{totalCost}}</div>
+  <p style="text-align: left">Breakdown</p>
+  <ul class="bracket">
+    <li  class="flex-between" *ngFor="let element of dataSource">
+     <div class="item-left">
+      <div>Tax Bracket</div>
+       {{element.bracket}}
+      </div>
+     <div class="item-right">${{element.cost}}</div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,52 @@
+<form [formGroup]="taxForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-content>
+      <h1>Calculate your tax</h1>
+      <div class="row">
+        <div class="col">
+            <button class="full-width" mat-stroked-button color="primary">Fields marked with * are mandatory</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-hint>Select your country of residence *</mat-hint>
+          <mat-form-field class="full-width">
+            <mat-select name="country" formControlName="country">
+              <mat-option *ngFor="let country of countries" [value]="country">
+                {{ country }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="taxForm.controls['country'].hasError('required')">
+              Country is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-hint>Select an income year *</mat-hint>
+          <mat-form-field class="full-width">
+            <mat-select  name="year" formControlName="year">
+              <mat-option *ngFor="let year of years" [value]="year">
+                {{ year }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="taxForm.controls['year'].hasError('required')">
+              Year is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-hint>Enter your taxable income for the income year *</mat-hint>
+          <mat-form-field class="full-width">
+            <mat-label>Amount</mat-label>
+            <input matInput  formControlName="income" type="text" class="example-right-align">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="full-width" mat-raised-button color="primary" type="submit">Calculate</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
